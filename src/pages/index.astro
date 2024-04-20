@@ -1,5 +1,11 @@
 ---
 const name = "susu";
+const projectOne = "synesthesia";
+const descriptionOne = "coolest music visualiser in the world (´･ω･`)";
+const linkOne = "synesthesia.psi.vercel.app";
+const projectTwo = "digital forest";
+const descriptionTwo = "building with notes right here right now :3";
+const linkTwo = "/forest/";
 import './styles/global.css';
 ---
 
@@ -21,6 +27,24 @@ import './styles/global.css';
 				<p class="font-400"><a href="/now/">now</a></p>
 			</header>
 			<p class="font-eigth">explorer</p>
+			<div class="mt--large font-bold" style="padding-left: .2rem;">
+				<h5 class="montserrat">building...</h5>
+			</div>
+			<div class="column mt--small">
+				<a href={linkOne}>
+					<div class="box">
+						<p class="font-eigth font-bold montserrat">{projectOne}</p>
+						<p class="mt--large font-eigth">{descriptionOne}</p>
+					</div>
+				</a>
+				<a href={linkTwo}>
+					<div class="box">
+						<p class="font-eigth font-bold montserrat">{projectTwo}</p>
+						<p class="mt--large font-eigth">{descriptionTwo}</p>
+					</div>
+				</a>
+			</div>
 		</div>
+		
 	</body>
 </html>
