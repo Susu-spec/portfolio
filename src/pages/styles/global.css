@@ -19,7 +19,7 @@ a {
 .container {
     /* padding: 1.5rem; */
     width: 100%;
-    max-width: 650px;
+    max-width: 40.625rem;
     margin: 0 auto;
 }
 
@@ -74,3 +74,8 @@ a {
     flex-direction: column;
 }
 
+@media only screen and (max-width: 40.625rem) {
+    .container {
+        max-width: 21rem;
+    }
+}
