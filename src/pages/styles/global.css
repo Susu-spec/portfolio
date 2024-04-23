@@ -20,6 +20,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: NixieOne;
+    src: url('/fonts/NixieOne.ttf') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     margin: auto;
     margin-top: 10vh;
@@ -153,6 +161,10 @@ a:hover {
 
 .la-machine {
     font-family: "LaMachine", sans-serif;
+}
+
+.nixie-one {
+    font-family: "NixieOne", sans-serif;
 }
 
 .font-italic {
