@@ -4,6 +4,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: 'Punkbabe';
+    src: url('/fonts/punkbabe.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LaMachine';
+    src: url('/fonts/la-machine.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 body {
     margin: auto;
@@ -45,6 +60,10 @@ a:hover {
     width: 100%;
     max-width: 21rem;
     margin: 0 auto;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 .space-between {
@@ -126,6 +145,14 @@ a:hover {
 .montserrat {
     font-family: "Montserrat", sans-serif;
     font-style: normal;
+}
+
+.punkbabe {
+    font-family: "Punkbabe", sans-serif;
+}
+
+.la-machine {
+    font-family: "LaMachine", sans-serif;
 }
 
 .font-italic {

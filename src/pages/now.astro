@@ -1,5 +1,8 @@
 ---
-const pageTitle = "susu/now"
+const pageTitle = "susu/now";
+const d = "[doing]";
+const t = "[thought]";
+const r = "[reading]";
 import './styles/global.css';
 ---
 
@@ -39,9 +42,24 @@ import './styles/global.css';
                     <p class="font-bold">>>>> [astro]</p>
                 </div>  
             </div>
-            <div class="box mt--large">
+            <!-- <div class="box mt--large">
                 <h3 class="font-bold">now <span class="grey-white font-200">watching</span></h3>
-
+            </div> -->
+            <div class="note box mt--large">
+                <h5>23-04-2024--tue</h5>
+                <div class="mt--small">
+                    <p>{t} realised what really got me going is <a href="https://www.youtube.com/watch?v=SqOTG3n5sbI&t=569s" class="grey-white">this</a></p>
+                    <p>{d} built two nextjs apps</p>
+                    <p>{d} learning authentication and api calls</p>
+                    <p>{r} <a href="https://www.amazon.com/How-Take-Smart-Notes-Nonfiction/dp/1542866502"><span class="grey-white">How to take smart notes.</span></a> sometimes i don't finish non-fiction books because i stop reading linearly after a while but i'm hoping to finish this one in a non-linear fashion or in a linear one if it's exciting enough. currently in the third section.</p>
+                </div>
+            </div>
+            <div class="note box mt--large">
+                <h5>21-04-2024--sun</h5>
+                <div class="mt--small">
+                    <p>{t} some written english feels forced. shifting this to my blog section because i need to write this out and think it through. i get what you're thinking, "everyone knows this" but WHY do we not make conscious effort into making it flow better. it's kind of jarring to see. i might even be doing it myself right now.</p>
+                    <p>{d} taking some time to build my first next.js app today</p>
+                </div> 
             </div>
         </div>
     </body>
