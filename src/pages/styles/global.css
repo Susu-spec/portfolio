@@ -113,6 +113,10 @@ a:hover {
     margin-top: 1rem;
 }
 
+.mb--small {
+    margin-bottom: 1rem;
+}
+
 .box {
     padding: 1rem .5rem;
     border: .8px solid #7c7a7a;
