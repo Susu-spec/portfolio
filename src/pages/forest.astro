@@ -1,6 +1,7 @@
 ---
 const pageTitle = "susu/forest"
 const juwee = "https://juw.ee/"
+import LoaderWrapper from '../layouts/LoaderWrapper';
 import './styles/global.css';
 ---
 <html lang="en">
@@ -14,16 +15,18 @@ import './styles/global.css';
         <title>{pageTitle}</title>
     </head>
     <body class="background">
-        <div class="container">
-            <header class="space-between">
-                <p class="font-600 font-bold">forest</p>
-                <p class="font-increase font-bold"><a href="/">susu</a></p>
-            </header>
-            <p class="font-eigth">inspired by <span class="grey-white"><a href={juwee}>juw.ee</span></a></p>
-            <div class="mt--large">
-                <p>[no content yet] i get to publish notes </p>
-                <p>this is what i'll call a modern day diary, they'll build up to larger ideas at least that's what <span class="grey-white"><a href="">they</a></span> say and i'll probably have to find a way to have them link to each other.</p>
+        <LoaderWrapper client:load>
+            <div class="container">
+                <header class="space-between">
+                    <p class="font-600 font-bold">forest</p>
+                    <p class="font-increase font-bold"><a href="/">susu</a></p>
+                </header>
+                <p class="font-eigth">inspired by <span class="grey-white"><a href={juwee}>juw.ee</span></a></p>
+                <div class="mt--large">
+                    <p>[no content yet] i get to publish notes </p>
+                    <p>this is what i'll call a modern day diary, they'll build up to larger ideas at least that's what <span class="grey-white"><a href="">they</a></span> say and i'll probably have to find a way to have them link to each other.</p>
+                </div>
             </div>
-        </div>
+        </LoaderWrapper>
     </body>
 </html>

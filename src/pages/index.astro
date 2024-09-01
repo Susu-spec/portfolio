@@ -9,6 +9,8 @@ const linkOne = "https://synesthesia-psi.vercel.app";
 const projectTwo = "digital forest";
 const descriptionTwo = "building with notes right here right now :3";
 const linkTwo = "/forest/";
+import SocialLinks from '../components/SocialLinks.astro';
+import LoaderWrapper from '../layouts/LoaderWrapper';
 import './styles/global.css';
 ---
 
@@ -20,65 +22,64 @@ import './styles/global.css';
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 		<meta name="viewport" content="width=device-width" />
+		
 		<meta name="generator" content={Astro.generator} />
+
 		<title>susu</title>
 	</head>
-	<body class="background">
-		<div class="container">
-			<header class="space-between">
-				<p class="font-increase font-bold"><a href="/">susu</a></p>
-				<p class="font-400"><a href="/now/">now</a></p>
-			</header>
-			<p class="font-eigth">explorer</p>
-			<div style="margin: 2rem; padding: .8rem; " class="la-machine">
-				<blockquote>"she's just like mariah carey, time simply doesn't exist."</blockquote>
-				<blockquote style="text-align: right"><a class="font-eigth grey-white underline" href="https://youtu.be/PIPAz0rGzag?si=g8-Wy9uk2HzjFsw7">leopard limo</a></a></blockquote>
+	<body class="background" >
+		<LoaderWrapper client:load>
+			<div class="container" >
+				<header class="space-between">
+					<p class="font-increase font-bold"><a href="/">susu</a></p>
+					<p class="font-400"><a href="/now/">now</a></p>
+				</header>
+				<p class="font-eigth">explorer</p>
+				<div style="margin: 2rem; padding: .8rem; " class="la-machine">
+					<blockquote>"she's just like mariah carey, time simply doesn't exist."</blockquote>
+					<blockquote style="text-align: right"><a class="font-eigth grey-white underline" href="https://youtu.be/PIPAz0rGzag?si=g8-Wy9uk2HzjFsw7">leopard limo</a></a></blockquote>
+				</div>
+				<div class="mt--large font-bold" style="padding-left: .2rem;">
+					<h5 class="montserrat">building...</h5>
+				</div>
+				<div class="column mt--small">
+					<a href={linkOne}>
+						<div class="box">
+							<p class="font-eigth font-bold montserrat">{projectOne}</p>
+							<p class="mt--large font-eigth">{descriptionOne}</p>
+						</div>
+					</a>
+					<a href={linkTwo}>
+						<div class="box">
+							<p class="font-eigth font-bold montserrat">{projectTwo}</p>
+							<p class="mt--large font-eigth">{descriptionTwo}</p>
+						</div>
+					</a>
+				</div>
+				<div class="mt--large font-eigth">
+					<hr>
+					<p class="font-eigth font-bold" style="padding: .4rem .2rem">LIBRARY</p>
+					<hr>
+					<ul style="margin-top: .4rem">
+						<li> <a href="/links">>>> cool stuff </a></li>
+						<li> <a href="/books">>>> books</a></li>
+						<li> <a href="/nerd">>>> nerd stuff</a></li>
+					</ul>
+				</div>
+				<div class="note box mt--large">
+					<h3 class="la-machine">01-09-2024--thur</h3>
+					<div class="mt--small">
+						<div style="margin: .5rem; padding: .8rem; " class="la-machine">
+							<blockquote>"on life lately"</blockquote>
+						</div>
+						<p>{t} WELCOME TO THE GROOVE </p>
+						<p>{d} earth. wind. and fire.</p>
+					</div> 
+				</div>
+				<footer>
+					<SocialLinks />
+				</footer>
 			</div>
-			<div class="mt--large font-bold" style="padding-left: .2rem;">
-				<h5 class="montserrat">building...</h5>
-			</div>
-			<div class="column mt--small">
-				<a href={linkOne}>
-					<div class="box">
-						<p class="font-eigth font-bold montserrat">{projectOne}</p>
-						<p class="mt--large font-eigth">{descriptionOne}</p>
-					</div>
-				</a>
-				<a href={linkTwo}>
-					<div class="box">
-						<p class="font-eigth font-bold montserrat">{projectTwo}</p>
-						<p class="mt--large font-eigth">{descriptionTwo}</p>
-					</div>
-				</a>
-			</div>
-			<div class="mt--large font-eigth">
-				<hr>
-				<p class="font-eigth font-bold" style="padding: .4rem .2rem">LIBRARY</p>
-				<hr>
-				<ul style="margin-top: .4rem">
-					<li> <a href="/links">>>> cool stuff </a></li>
-					<li> <a href="/books">>>> books</a></li>
-					<li> <a href="/nerd">>>> nerd stuff</a></li>
-				</ul>
-			</div>
-			<div class="note box mt--large">
-                <h3 class="la-machine">09-05-2024--thur</h3>
-                <div class="mt--small">
-					<div style="margin: .5rem; padding: .8rem; " class="la-machine">
-						<blockquote>"on life lately"</blockquote>
-					</div>
-					<p>{t} ᴇᴠᴇʀʏᴛʜɪɴɢ ᴍᴜsᴛ ʙᴇ ʀᴇᴜsᴀʙʟᴇ. </p>
-                    <p>{t} lots of thoughts. collaborative software. materials. objects. thought soups. ᵃⁿᵈ ᵗⁱⁿʸ ᵗᵉˣᵗ.</p>
-                    <p>{d} getting acquainted with my new schedule ( ^ _ - ) ⁿᵉʷ ʲᵒᵇ. ʷʰᵒ ᵈᶦˢ</p>
-                </div> 
-            </div>
-			<footer>
-                <ul class="la-machine font-eigth" style="margin-top: 4rem; display: flex; flex-direction: column; gap: 1rem">
-                    <li><a class="underline" href="https://github.com/Susu-spec">github@susu</a></li>
-                    <li><a class="underline" href="https://twitter.com/susu_suleiman1">twitter@susu</a></li>
-                </ul>
-            </footer>
-		</div>
-		
+		</LoaderWrapper>
 	</body>
 </html>

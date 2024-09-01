@@ -4,6 +4,10 @@ const d = "[doing]";
 const t = "[thought]";
 const r = "[reading]";
 const la = "la-machine";
+import SocialLinks from '../components/SocialLinks.astro';
+import SpotifyEmbed from '../components/SpotifyEmbed';
+import { sections } from '../data/notes';
+import LoaderWrapper from '../layouts/LoaderWrapper';
 import './styles/global.css';
 ---
 
@@ -17,82 +21,49 @@ import './styles/global.css';
         <title>{pageTitle}</title>
     </head>
     <body class="background">
-        <div class="container">
-            <header class="space-between">
-                <p class="font-bold">nownownow</p>
-                <p class="font-increase font-bold"><a href="/">susu</a></p>
-            </header>
-            <h2 class="mt--large la-machine">now</h2>
-            <div class="box mt--large">
-                <h3 class="la-machine">album of the week</h3>
-                <!-- TODO: Set up Auth for myself ^ ^ -->
-                <blockquote style="text-align: right;" class="la-machine">- great replay value εﾌ</blockquote>
-                <div class="align-center mt--small">
-                    <iframe style="border: none" 
-                    src="https://open.spotify.com/embed/album/78YYcghEDz2dHRx0EcDGXZ?utm_source=generator" 
-                    width="100%" height="352" 
-                    allowfullscreen="" 
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                    loading="lazy"></iframe>
+        <LoaderWrapper client:load>
+            <div class="container">
+                <header class="space-between">
+                    <p class="font-bold">nownownow</p>
+                    <p class="font-increase font-bold"><a href="/">susu</a></p>
+                </header>
+                <h2 class="mt--large la-machine">now</h2>
+                <div class="box mt--large">
+                    <h3 class="la-machine">album of the week</h3>
+                    <!-- TODO: Set up Auth for myself ^ ^ -->
+                    <div class="align-center mt--small">
+                        <SpotifyEmbed client:load/>
+                    </div>
                 </div>
-            </div>
-            <div class="note box mt--large">
-                <h3 class="font-bold la-machine">now <span class="grey-white font-200">playing with</span></h3>
-                <div class="mt--small">
-                    <p class="font-bold">>>>> [next-js]</p>
-                    <p class="font-bold">>>>> [astro]</p>
-                    <p class="font-bold">>>>> [typescript]</p>
-                </div>  
-            </div>
-            <!-- <div class="box mt--large">
-                <h3 class="font-bold">now <span class="grey-white font-200">watching</span></h3>
-            </div> -->
-            <div class="note box mt--large">
-                <h3 class="la-machine">09-05-2024--thur</h3>
-                <div class="mt--small">
-                    <p>{t} this file is about to get too convoluted. need to come up with more reusability</p>
-                    <p>{t} lots of thoughts. collaborative software. materials. confidence. thought soups. ᵃⁿᵈ ᵗⁱⁿʸ ᵗᵉˣᵗ.</p>
-                    <p>{d} getting acquainted with my new schedule ( ^ _ - ) ⁿᵉʷ ʲᵒᵇ. ʷʰᵒ ᵈᶦˢ</p>
-                </div> 
-            </div>
-            <div class="note box mt--large">
-                <h3 class="la-machine">27-04-2024--sat</h3>
-                <div class="mt--small">
-                    <p>{t} less think. more do. on <a class="grey-white underline" href="https://youtu.be/8G9pnE0bnfE?si=LI_hRDuF6wYPd8If">Basquiat.</a></p>
-                    <p>{t} most of the content i consume, the people i'm around, spread this message. i think it's the most worthy message i've come across in the past year.</p>
-                    <p>{d} working on authentication.</p>
-                </div> 
-            </div>
-            <div class="note box mt--large">
-                <h3 class="la-machine">26-04-2024--fri</h3>
-                <div class="mt--small">
-                    <p>{t} bombed an interview today. of course i'll keep going.</p>
-                    <p>{d} checking out <a class="grey-white underline" href="https://search.marginalia.nu/">this DIY search engine</a></p>
-                </div> 
-            </div>
-            <div class="note box mt--large">
-                <h3 class="la-machine">23-04-2024--tue</h3>
-                <div class="mt--small">
-                    <p>{t} realised what really got me going is <a href="https://www.youtube.com/watch?v=SqOTG3n5sbI&t=569s" class="grey-white">this</a></p>
-                    <p>{d} got two nextjs apps going</p>
-                    <p>{d} learning authentication and api calls</p>
-                    <p>{r} <a href="https://www.amazon.com/How-Take-Smart-Notes-Nonfiction/dp/1542866502"><span class="grey-white">How to take smart notes.</span></a> sometimes i don't finish non-fiction books because i stop reading linearly after a while but i'm hoping to finish this one in a non-linear fashion or in a linear one if it's exciting enough. currently in the third section.</p>
+                <div class="note box mt--large">
+                    <h3 class="font-bold la-machine">now <span class="grey-white font-200">playing with</span></h3>
+                    <div class="mt--small">
+                        <p class="font-bold">>>>> [react-js]</p>
+                        <p class="font-bold">>>>> [astro]</p>
+                        <p class="font-bold">>>>> [typescript]</p>
+                    </div>  
                 </div>
+                {sections.map((section) => (
+                    <div class="note box mt--large">
+                        <h3 class="la-machine">{section.date}</h3>
+                        <div class="mt--small">
+                            {section.thoughts.map((thought) => (
+                                <p>{`[thought] ${thought}`}</p>
+                            ))}
+                            {section.doings.map((doing) => (
+                                <p>{`[doing] ${doing}`}</p>
+                            ))}
+                            {section.readings && section.readings.map((reading) => (
+                                <p>{`[reading] ${reading}`}</p>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+                
+                <footer>
+                    <SocialLinks />
+                </footer>
             </div>
-            <div class="note box mt--large">
-                <h3 class="la-machine">21-04-2024--sun</h3>
-                <div class="mt--small">
-                    <p>{t} some written english feels forced. shifting this to my blog section because i need to write this out and think it through. i get what you're thinking, "everyone knows this" but WHY do we not make conscious effort into making it flow better. it's kind of jarring to see. i might even be doing it myself right now.</p>
-                    <p>{d} taking some time to build my first next.js app today</p>
-                </div> 
-            </div>
-            
-            <footer>
-                <ul class="la-machine font-eigth" style="margin-top: 4rem; display: flex; flex-direction: column; gap: 1rem">
-                    <li><a class="underline" href="https://github.com/Susu-spec">github@susu</a></li>
-                    <li><a class="underline" href="https://twitter.com/susu_suleiman1">twitter@susu</a></li>
-                </ul>
-            </footer>
-        </div>
+        </LoaderWrapper>
     </body>
 </html>
